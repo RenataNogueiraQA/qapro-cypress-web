@@ -72,6 +72,15 @@ describe('Cadastro de Usuário', () => {
         registerPage.submitRegister();
     });
 
+    it('Cadastro de usuário com senha menor 6 caracteres', () => {        
+        registerPage.fillForm({
+            name: 'Renata',
+            email: 'renata@cadusuario.com.br',
+            password: '12345'
+        });
+        registerPage.submitRegister();
+    });
+
     it('Botão Cadastrar visível', () => {        
         registerPage.assertButtonVisible();
     });
